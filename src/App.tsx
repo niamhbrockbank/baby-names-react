@@ -1,19 +1,24 @@
 import babyNames from "./babyNamesData.json";
 
-const convertToElement = (n : string | number) => <li>{n}</li>
+interface BabyName {
+  id : number,
+  name : string,
+  sex : string //ideally set to m or f
+}
+const convertToElement = (n : BabyName) => <li key={n.id}>{n.name}</li>
 
 function App(): JSX.Element {
-  const nameList: string[] = [];
+  const nameList: JSX.Element[] = [];
   for (const baby of babyNames) {
-    nameList.push(baby.name);
+    nameList.push(convertToElement(baby));
   }
 
-  nameList.sort();
-  const nameListElements = nameList.map(convertToElement)
+  // nameList.sort();
+  // const nameListElements = nameList.map(convertToElement)
 
   return (
     <>
-      <ul>{nameListElements}</ul>
+      <ul>{nameList}</ul>
     </>
   );
 }
