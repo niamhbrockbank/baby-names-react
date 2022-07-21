@@ -1,11 +1,12 @@
 import babyNames from "./babyNamesData.json";
+import './styles.css'
 
 interface BabyName {
   id : number,
   name : string,
   sex : string //ideally set to m or f
 }
-const convertToElement = (n : BabyName) => <li key={n.id}>{n.name}</li>
+const convertToElement = (n : BabyName) => <li key={n.id} className={n.sex}>{n.name}</li>
 
 function App(): JSX.Element {
   const nameList: JSX.Element[] = [];
@@ -18,6 +19,7 @@ function App(): JSX.Element {
 
   return (
     <>
+      <link rel="stylesheet" href="../styles.css"></link>
       <ul>{nameList}</ul>
     </>
   );
