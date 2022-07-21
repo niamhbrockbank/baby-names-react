@@ -1,15 +1,6 @@
 import babyNames from "./babyNamesData.json";
 
-// function alphCompare(a: string, b:string){
-//   if (a < b) {
-//     return -1;
-//   }
-//   if (a > b) {
-//     return 1;
-//   }
-//   // a must be equal to b
-//   return 0;
-// }
+const convertToElement = (n : string | number) => <li>{n}</li>
 
 function App(): JSX.Element {
   const nameList: string[] = [];
@@ -18,10 +9,7 @@ function App(): JSX.Element {
   }
 
   nameList.sort();
-  const nameListElements: JSX.Element[] = [];
-  for (const name of nameList) {
-    nameListElements.push(<li>{name}</li>);
-  }
+  const nameListElements = nameList.map(convertToElement)
 
   return (
     <>
