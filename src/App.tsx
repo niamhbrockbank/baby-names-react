@@ -12,25 +12,22 @@ import babyNames from "./babyNamesData.json";
 // }
 
 function App(): JSX.Element {
-  const nameList: string[] = []
-  for (const baby of babyNames){
-    nameList.push(baby.name)
+  const nameList: string[] = [];
+  for (const baby of babyNames) {
+    nameList.push(baby.name);
   }
 
-  nameList.sort()
-  const nameListElements : JSX.Element[] = []
-  for (const name of nameList){
-    nameListElements.push(<li>{name}</li>)
+  nameList.sort();
+  const nameListElements: JSX.Element[] = [];
+  for (const name of nameList) {
+    nameListElements.push(<li>{name}</li>);
   }
 
   return (
-    <>   
-    <ul>
-      {nameListElements}
-    </ul>
+    <>
+      <ul>{nameListElements}</ul>
     </>
-
-  )
+  );
 }
 
 export default App;
