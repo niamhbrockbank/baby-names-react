@@ -1,15 +1,30 @@
 .m {
-    background-color : green
+    background-color : mediumseagreen
 }
 
 .f {
     background-color : pink
 }
 
+.m, .f {
+    padding : 10px;
+    display : inline-flex;
+    margin : 5px;
+    border-radius : 5px;
+}
+
 body {
     color : whitesmoke;
-    width : 150px;
-    justify-content : flex;
-    align-items: row
-    ;
+    width : cover;
+    border : 2px solid darkcyan;
+    border-radius : 25px;
+    font-family : sans-serif;  
+}
+
+#name-list {
+    padding : 20px;
+    list-style : none;
+    font-family: inherit;
+    font-weight : bold;
+    align-items : center; 
 }

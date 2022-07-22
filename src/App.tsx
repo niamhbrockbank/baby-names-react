@@ -20,7 +20,7 @@ function App(): JSX.Element {
   return (
     <>
       <link rel="stylesheet" href="../styles.css"></link>
-      <ul>{nameList}</ul>
+      <ul id='name-list'>{nameList}</ul>
     </>
   );
 }
