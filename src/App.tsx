@@ -28,9 +28,6 @@ function App(): JSX.Element {
     nameList.push(convertToElement(baby));
   }
 
-  // nameList.sort();
-  // const nameListElements = nameList.map(convertToElement)
-
   return (
     <>
       <link rel="stylesheet" href="../styles.css"></link>
