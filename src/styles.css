@@ -19,12 +19,14 @@ body {
     border : 2px solid darkcyan;
     border-radius : 25px;
     font-family : sans-serif;  
+    margin : auto;
+    display : block
+
 }
 
 #name-list {
-    padding : 20px;
+    padding : 2px 20px;
     list-style : none;
     font-family: inherit;
     font-weight : bold;
-    align-items : center; 
 }
