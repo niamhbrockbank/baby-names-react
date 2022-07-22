@@ -10,6 +10,7 @@ interface BabyName {
       {n.name}
     </li>
   );
+
   const compareAlph = (a: BabyName, b: BabyName) => {
     if (a.name < b.name) {
       return -1;
@@ -20,15 +21,19 @@ interface BabyName {
     return 0;
   };
 
-  export default function NameSection({typedMessage, setTypedMessage}:any): JSX.Element {
-    babyNames.sort(compareAlph);
+  export default function NameSection({typedMessage}:any): JSX.Element {
+    const isSearchRelevant = (n : BabyName): boolean => {
+        const lowerCaseName = n.name.toLowerCase()
+        return lowerCaseName.includes(typedMessage)
+      }
     
-    // const filteredBabyNames = babyNames.filter(n => n.length > 5)
+    babyNames.sort(compareAlph);
+    const filteredBabyNames = babyNames.filter(isSearchRelevant)
 
-    const nameList: JSX.Element[] = [];
-    for (const baby of babyNames) {
-      nameList.push(convertToElement(baby));
+    const nameElementList: JSX.Element[] = [];
+    for (const baby of filteredBabyNames) {
+      nameElementList.push(convertToElement(baby));
     }
-    // console.log(filteredBabyNames)
-    return <ul id="name-list">{nameList}</ul>
+
+    return <ul id="name-list">{nameElementList}</ul>
   }
