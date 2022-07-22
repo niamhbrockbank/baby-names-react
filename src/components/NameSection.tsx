@@ -20,12 +20,15 @@ interface BabyName {
     return 0;
   };
 
-  export default function NameSection(): JSX.Element {
+  export default function NameSection({typedMessage, setTypedMessage}:any): JSX.Element {
     babyNames.sort(compareAlph);
+    
+    // const filteredBabyNames = babyNames.filter(n => n.length > 5)
+
     const nameList: JSX.Element[] = [];
     for (const baby of babyNames) {
       nameList.push(convertToElement(baby));
     }
-
+    // console.log(filteredBabyNames)
     return <ul id="name-list">{nameList}</ul>
   }
