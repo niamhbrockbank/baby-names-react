@@ -12,13 +12,12 @@
   display: inline-flex;
   margin: 5px;
   border-radius: 5px;
+  color: whitesmoke;
 }
 
 body {
-  color: whitesmoke;
+  color:cadetblue;
   width: cover;
-  border: 2px solid darkcyan;
-  border-radius: 25px;
   font-family: sans-serif;
   margin: 50px;
   display: block;
@@ -29,4 +28,6 @@ body {
   list-style: none;
   font-family: inherit;
   font-weight: bold;
+  border: 2px solid darkcyan;
+  border-radius: 25px;
 }
