@@ -5,3 +5,11 @@
 .f {
     background-color : pink
 }
+
+body {
+    color : whitesmoke;
+    width : 150px;
+    justify-content : flex;
+    align-items: row
+    ;
+}
