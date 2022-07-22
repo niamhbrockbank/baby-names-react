@@ -5,6 +5,7 @@ export default function SearchBar({typedMessage, setTypedMessage}:any): JSX.Elem
 
     return <input 
             value = {typedMessage}
+            id='search-bar'
             onChange={(e) => {
                 setTypedMessage(e.target.value)
             }}

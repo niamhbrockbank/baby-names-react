@@ -6,7 +6,10 @@ interface BabyName {
     sex: string; //ideally set to m or f
   }
   const convertToElement = (n: BabyName) => (
-    <li key={n.id} className={n.sex}>
+    <li 
+    key={n.id} 
+    className={n.sex}
+    >
       {n.name}
     </li>
   );
