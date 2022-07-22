@@ -1,32 +1,32 @@
 .m {
-    background-color : mediumseagreen
+  background-color: mediumseagreen;
 }
 
 .f {
-    background-color : pink
+  background-color: pink;
 }
 
-.m, .f {
-    padding : 10px;
-    display : inline-flex;
-    margin : 5px;
-    border-radius : 5px;
+.m,
+.f {
+  padding: 10px;
+  display: inline-flex;
+  margin: 5px;
+  border-radius: 5px;
 }
 
 body {
-    color : whitesmoke;
-    width : cover;
-    border : 2px solid darkcyan;
-    border-radius : 25px;
-    font-family : sans-serif;  
-    margin : auto;
-    display : block
-
+  color: whitesmoke;
+  width: cover;
+  border: 2px solid darkcyan;
+  border-radius: 25px;
+  font-family: sans-serif;
+  margin: auto;
+  display: block;
 }
 
 #name-list {
-    padding : 2px 20px;
-    list-style : none;
-    font-family: inherit;
-    font-weight : bold;
+  padding: 2px 20px;
+  list-style: none;
+  font-family: inherit;
+  font-weight: bold;
 }
