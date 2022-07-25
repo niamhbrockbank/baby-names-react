@@ -10,7 +10,6 @@ function App(): JSX.Element {
     <>
       <link rel="stylesheet" href="../styles.css"></link>
       <SearchBar typedMessage={state} setTypedMessage={setState}/>
-      <FavouriteSection />
       <NameSection typedMessage={state}/>
     </>
   );

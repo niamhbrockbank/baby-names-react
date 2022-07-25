@@ -1,6 +1,7 @@
 import babyNames from "../babyNamesData.json";
+import FavouriteSection from "./FavouriteSection";
 
-interface BabyName {
+export interface BabyName {
     id: number;
     name: string;
     sex: string; //ideally set to m or f
@@ -32,10 +33,8 @@ interface BabyName {
       const handleClick = () => {
         if (favouriteNames.includes(n)){
           favouriteNames = removeName(favouriteNames, n)
-          console.log(favouriteNames)
         } else {
           favouriteNames.push(n)
-          console.log(favouriteNames)
         }
         
       }
@@ -53,14 +52,16 @@ interface BabyName {
     let favouriteNames : BabyName[] = []
     babyNames.sort(compareAlph);
     const filteredBabyNames = babyNames.filter(isSearchRelevant)
-
+    
+    //Convert to map
     const nameElementList: JSX.Element[] = [];
     for (const baby of filteredBabyNames) {
       nameElementList.push(convertToElement(baby));
     }
 
     return (
-      <>      
+      <>
+      <FavouriteSection favNames= {favouriteNames} convertFunction= {convertToElement} />      
       <ul id="name-list">{nameElementList}</ul>
       </>
     )
