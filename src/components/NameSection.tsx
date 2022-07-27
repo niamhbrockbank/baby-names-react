@@ -54,6 +54,7 @@ export interface BabyName {
     // const favouriteNames : BabyName[] = []
     babyNames.sort(compareAlph);
     const filteredBabyNames = babyNames.filter(isSearchRelevant)
+    const filteredFaveBabyNames = favourite.filter(isSearchRelevant)
     
     //Convert to map
     const nameElementList: JSX.Element[] = [];
@@ -63,7 +64,7 @@ export interface BabyName {
 
     return (
       <>
-      <FavouriteSection favNames= {favourite} convertFunction= {convertToElement} />      
+      <FavouriteSection favNames= {filteredFaveBabyNames} convertFunction= {convertToElement} />      
       <ul id="name-list">{nameElementList}</ul>
       </>
     )
