@@ -6,7 +6,7 @@ interface SearchBarType {
 export default function SearchBar({
   searchTerm,
   setSearchTerm,
-}: any): JSX.Element {
+}: SearchBarType): JSX.Element {
   // const [typedMessage, setTypedMessage] = useState('Search here...')
 
   return (
