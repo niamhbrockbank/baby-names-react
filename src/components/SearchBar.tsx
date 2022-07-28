@@ -1,13 +1,13 @@
 // import {useState} from 'react'
 
-export default function SearchBar({typedMessage, setTypedMessage}:any): JSX.Element {
+export default function SearchBar({searchTerm, setSearchTerm}:any): JSX.Element {
     // const [typedMessage, setTypedMessage] = useState('Search here...')
 
     return <input 
-            value = {typedMessage}
+            value = {searchTerm}
             id='search-bar'
             onChange={(e) => {
-                setTypedMessage(e.target.value)
+                setSearchTerm(e.target.value)
             }}
             />
 }

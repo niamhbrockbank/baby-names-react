@@ -8,8 +8,8 @@ function App(): JSX.Element {
   return (
     <>
       <link rel="stylesheet" href="../styles.css"></link>
-      <SearchBar typedMessage={state} setTypedMessage={setState}/>
-      <NameSection typedMessage={state}/>
+      <SearchBar searchTerm={state} setSearchTerm={setState}/>
+      <NameSection searchTerm={state}/>
     </>
   );
 }
