@@ -12,10 +12,13 @@ export interface BabyName {
 
 interface SearchTerm {
   searchTerm: string;
-  genderFilter : string
+  genderFilter: string;
 }
 
-export default function NameSection({ searchTerm , genderFilter}: SearchTerm): JSX.Element {
+export default function NameSection({
+  searchTerm,
+  genderFilter,
+}: SearchTerm): JSX.Element {
   const [favourite, setFavourite] = useState<BabyName[]>([]);
   const isSearchRelevant = (n: BabyName): boolean => {
     const lowerCaseName = n.name.toLowerCase();
@@ -48,37 +51,45 @@ export default function NameSection({ searchTerm , genderFilter}: SearchTerm): J
     return !favourite.includes(mainListName);
   });
 
-  const filteredFaveBabyNames = favourite.filter(isSearchRelevant)
-  
-  if (genderFilter === 'male'){
+  const filteredFaveBabyNames = favourite.filter(isSearchRelevant);
+
+  if (genderFilter === "male") {
     return (
       <>
         <FavouriteSection
-          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes('m'))}
+          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes("m"))}
           convertFunction={convertToElement}
         />
-        <ul id="name-list">{filteredMainNames.filter((n) => n.sex.includes('m')).map(convertToElement)}</ul>
+        <ul id="name-list">
+          {filteredMainNames
+            .filter((n) => n.sex.includes("m"))
+            .map(convertToElement)}
+        </ul>
       </>
     );
-  } else if (genderFilter === 'female'){
+  } else if (genderFilter === "female") {
     return (
       <>
         <FavouriteSection
-          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes('f'))}
+          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes("f"))}
           convertFunction={convertToElement}
         />
-        <ul id="name-list">{filteredMainNames.filter((n) => n.sex.includes('f')).map(convertToElement)}</ul>
+        <ul id="name-list">
+          {filteredMainNames
+            .filter((n) => n.sex.includes("f"))
+            .map(convertToElement)}
+        </ul>
       </>
     );
   } else {
     return (
-    <>
-      <FavouriteSection
-        favNames={filteredFaveBabyNames}
-        convertFunction={convertToElement}
-      />
-      <ul id="name-list">{filteredMainNames.map(convertToElement)}</ul>
-    </>
-  );
+      <>
+        <FavouriteSection
+          favNames={filteredFaveBabyNames}
+          convertFunction={convertToElement}
+        />
+        <ul id="name-list">{filteredMainNames.map(convertToElement)}</ul>
+      </>
+    );
   }
 }
