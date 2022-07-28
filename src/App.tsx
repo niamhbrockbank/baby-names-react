@@ -4,12 +4,14 @@ import SearchBar from "./components/SearchBar";
 import { useState } from "react";
 
 function App(): JSX.Element {
-  const [state, setState] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [genderFilter, setGenderFilter] = useState('')
+
   return (
     <>
       <link rel="stylesheet" href="../styles.css"></link>
-      <SearchBar searchTerm={state} setSearchTerm={setState} />
-      <NameSection searchTerm={state} />
+      <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} setGenderFilter={setGenderFilter}/>
+      <NameSection searchTerm={searchTerm} genderFilter={genderFilter} />
     </>
   );
 }

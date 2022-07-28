@@ -12,9 +12,10 @@ export interface BabyName {
 
 interface SearchTerm {
   searchTerm: string;
+  genderFilter : string
 }
 
-export default function NameSection({ searchTerm }: SearchTerm): JSX.Element {
+export default function NameSection({ searchTerm , genderFilter}: SearchTerm): JSX.Element {
   const [favourite, setFavourite] = useState<BabyName[]>([]);
   const isSearchRelevant = (n: BabyName): boolean => {
     const lowerCaseName = n.name.toLowerCase();
@@ -41,25 +42,43 @@ export default function NameSection({ searchTerm }: SearchTerm): JSX.Element {
   const filteredBabyNames = babyNames.filter(isSearchRelevant);
 
   //Filter according to whether in favourite list
-  const filteredNotFaveBabyNames = filteredBabyNames.filter(function (
+  const filteredMainNames = filteredBabyNames.filter(function (
     mainListName: BabyName
   ) {
     return !favourite.includes(mainListName);
   });
 
-  //Convert to map
-  const nameElementList: JSX.Element[] = [];
-  for (const baby of filteredNotFaveBabyNames) {
-    nameElementList.push(convertToElement(baby));
-  }
-
-  return (
+  const filteredFaveBabyNames = favourite.filter(isSearchRelevant)
+  
+  if (genderFilter === 'male'){
+    return (
+      <>
+        <FavouriteSection
+          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes('m'))}
+          convertFunction={convertToElement}
+        />
+        <ul id="name-list">{filteredMainNames.filter((n) => n.sex.includes('m')).map(convertToElement)}</ul>
+      </>
+    );
+  } else if (genderFilter === 'female'){
+    return (
+      <>
+        <FavouriteSection
+          favNames={filteredFaveBabyNames.filter((n) => n.sex.includes('f'))}
+          convertFunction={convertToElement}
+        />
+        <ul id="name-list">{filteredMainNames.filter((n) => n.sex.includes('f')).map(convertToElement)}</ul>
+      </>
+    );
+  } else {
+    return (
     <>
       <FavouriteSection
-        favNames={favourite}
+        favNames={filteredFaveBabyNames}
         convertFunction={convertToElement}
       />
-      <ul id="name-list">{nameElementList}</ul>
+      <ul id="name-list">{filteredMainNames.map(convertToElement)}</ul>
     </>
   );
+  }
 }
