@@ -16,7 +16,7 @@
 }
 
 body {
-  color:cadetblue;
+  color: cadetblue;
   font-family: sans-serif;
   margin: 50px;
   display: block;
@@ -32,10 +32,10 @@ body {
 }
 
 #search-bar {
-    border: 2px solid darkcyan;
-    display: block;
-    width: 400px;
-    height: 25px;
-    margin: auto;
-    padding: 0px 10px;
+  border: 2px solid darkcyan;
+  display: block;
+  width: 400px;
+  height: 25px;
+  margin: auto;
+  padding: 0px 10px;
 }
