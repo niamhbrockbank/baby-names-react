@@ -1,6 +1,6 @@
 import { BabyName } from "../components/NameSection";
 
-export default function compareAlph(a: BabyName, b: BabyName) {
+export default function compareAlph(a: BabyName, b: BabyName): number {
   if (a.name < b.name) {
     return -1;
   }
