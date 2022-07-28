@@ -24,6 +24,13 @@ export interface BabyName {
     return [...before, ...after]
   }
 
+  const isNotFavourite = (mainListName : BabyName, favouriteList : BabyName[]) : boolean => {
+    if (favouriteList.includes(mainListName)) {
+      return true
+    }
+    return false
+  }
+
   export default function NameSection({typedMessage}:any): JSX.Element {
     const [favourite, setFavourite] = useState<BabyName[]>([])
     const isSearchRelevant = (n : BabyName): boolean => {
@@ -50,14 +57,18 @@ export interface BabyName {
      </li>
     );
   }
-    
-    // const favouriteNames : BabyName[] = []
+  
     babyNames.sort(compareAlph);
     const filteredBabyNames = babyNames.filter(isSearchRelevant)
     
+    //Filter according to whether in favourite list
+    const filteredNotFaveBabyNames = filteredBabyNames.filter(function(mainListName : BabyName) {
+      return !favourite.includes(mainListName)
+    })
+
     //Convert to map
     const nameElementList: JSX.Element[] = [];
-    for (const baby of filteredBabyNames) {
+    for (const baby of filteredNotFaveBabyNames) {
       nameElementList.push(convertToElement(baby, favourite));
     }
 
