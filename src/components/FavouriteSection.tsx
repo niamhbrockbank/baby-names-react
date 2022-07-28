@@ -1,8 +1,8 @@
 import { BabyName } from "./NameSection";
 
 interface FavouriteSectionType {
-    favNames : BabyName[],
-    convertFunction: (n: BabyName) => JSX.Element
+  favNames: BabyName[];
+  convertFunction: (n: BabyName) => JSX.Element;
 }
 
 export default function FavouriteSection({

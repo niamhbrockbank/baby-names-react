@@ -11,7 +11,7 @@ export interface BabyName {
 }
 
 interface SearchTerm {
-  searchTerm : string
+  searchTerm: string;
 }
 
 export default function NameSection({ searchTerm }: SearchTerm): JSX.Element {

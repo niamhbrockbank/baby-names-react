@@ -1,6 +1,6 @@
 interface SearchBarType {
-    searchTerm : string,
-    setSearchTerm: (newTerm : string) => void
+  searchTerm: string;
+  setSearchTerm: (newTerm: string) => void;
 }
 
 export default function SearchBar({
