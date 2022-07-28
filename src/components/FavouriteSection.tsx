@@ -1,7 +1,14 @@
+import { BabyName } from "./NameSection";
+
+interface FavouriteSectionType {
+    favNames : BabyName[],
+    convertFunction: (n: BabyName) => JSX.Element
+}
+
 export default function FavouriteSection({
   favNames,
   convertFunction,
-}: any): JSX.Element {
+}: FavouriteSectionType): JSX.Element {
   //Re-render onClick
   const favNamesElements: JSX.Element[] = favNames.map(convertFunction);
 

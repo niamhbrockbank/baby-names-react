@@ -10,7 +10,11 @@ export interface BabyName {
   sex: string; //ideally set to m or f
 }
 
-export default function NameSection({ searchTerm }: any): JSX.Element {
+interface SearchTerm {
+  searchTerm : string
+}
+
+export default function NameSection({ searchTerm }: SearchTerm): JSX.Element {
   const [favourite, setFavourite] = useState<BabyName[]>([]);
   const isSearchRelevant = (n: BabyName): boolean => {
     const lowerCaseName = n.name.toLowerCase();

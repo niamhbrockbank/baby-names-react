@@ -1,4 +1,7 @@
-// import {useState} from 'react'
+interface SearchBarType {
+    searchTerm : string,
+    setSearchTerm: (newTerm : string) => void
+}
 
 export default function SearchBar({
   searchTerm,
