@@ -60,7 +60,7 @@ export default function NameSection({
           favNames={filteredFaveBabyNames.filter((n) => n.sex.includes("m"))}
           convertFunction={convertToElement}
         />
-        <h1 id='name-title'>Names:</h1>
+        <h1 id="name-title">Names:</h1>
         <ul id="name-list">
           {filteredMainNames
             .filter((n) => n.sex.includes("m"))
