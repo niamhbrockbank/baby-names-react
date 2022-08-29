@@ -1,3 +1,13 @@
+button{
+  border : 2px solid rgb(231, 234, 234);
+  background-color: white;
+  width : 80px;
+  border-radius: 4px;
+  height: 40px;
+  font-weight: bold;
+  font-size: medium;
+}
+
 .m {
   background-color: mediumseagreen;
 }
@@ -8,11 +18,12 @@
 
 .m,
 .f {
-  padding: 10px;
+  padding: 10px 15px;
   display: inline-flex;
   margin: 5px;
   border-radius: 5px;
   color: whitesmoke;
+  text-align: center;
 }
 
 body {
@@ -20,22 +31,53 @@ body {
   font-family: sans-serif;
   margin: 50px;
   display: block;
+  font-size: 16px;
 }
 
 #name-list {
-  padding: 2px 20px;
+  padding: 2px 20px 0px 0px;
   list-style: none;
   font-family: inherit;
   font-weight: bold;
-  border: 2px solid darkcyan;
-  border-radius: 25px;
+  width : 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#search-section{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: baseline;
 }
 
 #search-bar {
-  border: 2px solid darkcyan;
+  border: 2px solid rgb(231, 234, 234);
   display: block;
   width: 400px;
-  height: 25px;
-  margin: auto;
-  padding: 0px 10px;
+  padding: 5px 10px;
+  font-size: inherit;
+  height : 25px;
+}
+
+.gender-selected{
+  border-bottom: 3px solid black;
+}
+
+#favourite-section{
+  min-height : 150px;
+}
+
+#favourite-list{
+  padding-left: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width : 90vw;
+}
+
+#name-title{
+  margin-top: 20px;
 }

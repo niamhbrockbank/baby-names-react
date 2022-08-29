@@ -14,8 +14,10 @@ export default function FavouriteSection({
 
   return (
     <>
-      <p>Hi favourites</p>
-      <ul>{favNamesElements}</ul>
+      <div id="favourite-section">
+        <h1>Favourites:</h1>
+        <ul id='favourite-list'>{favNamesElements}</ul>
+      </div>
     </>
   );
 }

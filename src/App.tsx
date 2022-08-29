@@ -14,6 +14,7 @@ function App(): JSX.Element {
         searchTerm={searchTerm}
         setSearchTerm={setSearchTerm}
         setGenderFilter={setGenderFilter}
+        genderFilter={genderFilter}
       />
       <NameSection searchTerm={searchTerm} genderFilter={genderFilter} />
     </>
