@@ -32,7 +32,7 @@ export default function SearchBar({
             </button>
             <button className="m" onClick={() => setGenderFilter("male")}>
               male
-            </button>
+              </button>
             <button className="f" onClick={() => setGenderFilter("female")}>
               female
             </button>
